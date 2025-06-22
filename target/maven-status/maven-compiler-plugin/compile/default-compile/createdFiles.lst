@@ -1,0 +1,17 @@
+progkorny\bookpurchaseweb\model\Customer.class
+progkorny\bookpurchaseweb\repository\PurchaseRepository.class
+progkorny\bookpurchaseweb\BookPurchaseWebApplication.class
+progkorny\bookpurchaseweb\service\CustomerService.class
+progkorny\bookpurchaseweb\exception\NosuchEntityException.class
+progkorny\bookpurchaseweb\controller\ViewController.class
+progkorny\bookpurchaseweb\controller\CustomerRESTController.class
+progkorny\bookpurchaseweb\controller\PurchaseController.class
+progkorny\bookpurchaseweb\repository\BookRepository.class
+progkorny\bookpurchaseweb\model\Book.class
+progkorny\bookpurchaseweb\controller\BookRESTController.class
+progkorny\bookpurchaseweb\repository\CustomerRepository.class
+progkorny\bookpurchaseweb\service\BookService.class
+progkorny\bookpurchaseweb\service\BookServiceWithArrayList.class
+progkorny\bookpurchaseweb\service\PurchaseService.class
+progkorny\bookpurchaseweb\model\Purchase.class
+progkorny\bookpurchaseweb\model\Purchase$Builder.class

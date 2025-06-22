@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <title>Könyv törlése</title>
+</head>
+<body>
+
+<h2>Könyv törlése</h2>
+
+<label for="deleteId">Törlendő könyv ID:</label>
+<input type="number" id="deleteId" value="1" />
+
+<button onclick="deleteBook()">Könyv törlése</button>
+
+<p id="deleteResult"></p>
+
+<script>
+    const apiBase = "http://localhost:9090/api/book";
+
+    async function deleteBook() {
+        const id = document.getElementById("deleteId").value;
+        const resultElement = document.getElementById("deleteResult");
+
+        if (!id || isNaN(id)) {
+            resultElement.textContent = "Kérlek, adj meg egy érvényes ID-t.";
+            return;
+        }
+
+        try {
+            const response = await fetch(`${apiBase}/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                resultElement.textContent = "Könyv sikeresen törölve.";
+            } else if (response.status === 404) {
+                resultElement.textContent = "Nem található ilyen ID-jű könyv.";
+            } else {
+                resultElement.textContent = `Hiba a törlés során: ${response.status}`;
+            }
+        } catch (error) {
+            resultElement.textContent = `Hiba: ${error}`;
+        }
+    }
+</script>
+
+
+</body>
+</html>
