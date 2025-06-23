@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service  // Service réteg komponensként jelöli az osztályt, a Spring kezeli az életciklust
 public class BookService {
 
-    @Autowired  // Automatikusan beszúrja a BoatRepository példányt (dependency injection)
+    @Autowired  // Automatikusan beszúrja a BookRepository példányt (dependency injection)
     private BookRepository bookRepository;
 
     // Összes könyv lekérdezése az adatbázisból
