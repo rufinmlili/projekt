@@ -20,18 +20,18 @@ public class Purchase {
     @JoinColumn(name = "book_purchase_id") // Az adatbázisban ez a mező tárolja a hivatkozott hajó ID-ját
     private Book bookPurchase;
 
-    // Több RentalEvent is tartozhat egy ügyfélhez
+    // Több Purchase is tartozhat egy vásárlóhoz
     @ManyToOne
     @JoinColumn(name = "purchase_customer_id") // Külső kulcs a customer(id)-ra
     private Customer purchaseCustomer;
 
-    // A kölcsönzés kezdő dátuma
+    // A vásárlás kezdő dátuma
     private LocalDate purchaseDate;
 
-    // A bérlés teljes költsége
+    // A vásárlás teljes költsége
     private double totalCost;
 
-    // Meg van-e zárva a bérlés (pl. visszahozták-e a hajót)
+    // Meg van-e zárva a vásárlás
     private boolean isClosed;
 
     // --- Getterek és Setterek ---
