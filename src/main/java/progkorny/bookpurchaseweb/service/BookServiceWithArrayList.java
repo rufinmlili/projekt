@@ -18,7 +18,7 @@ public class BookServiceWithArrayList {
             createBook(3L, "Német szótár")
     ));
 
-    // Segédfüggvény könyv létrehozására adott id, név és hossz alapján
+    // Segédfüggvény könyv létrehozására adott id és cím alapján
     private Book createBook(Long id, String title) {
         Book book = new Book();
         book.setId(id);
@@ -38,7 +38,7 @@ public class BookServiceWithArrayList {
         return books;
     }
 
-    // Hönyv keresése ID alapján, ha nincs ilyen könyv, kivételt dob
+    // Könyv keresése ID alapján, ha nincs ilyen könyv, kivételt dob
     public Book getBookById(Long id) {
         return books.stream()
                 .filter(book -> book.getId().equals(id))  // Szűrés azonosító alapján
