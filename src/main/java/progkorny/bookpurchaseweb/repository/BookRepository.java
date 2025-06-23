@@ -7,12 +7,12 @@ import progkorny.bookpurchaseweb.model.Purchase;
 
 
 // A @Repository annotációval jelezzük, hogy ez az osztály egy Spring Data Repository,
-// amely az adatbázis műveletekért felelős a Boat entitás számára.
+// amely az adatbázis műveletekért felelős a Book entitás számára.
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
     // A JpaRepository biztosítja az alapvető CRUD műveleteket (Create, Read, Update, Delete)
     // és további hasznos metódusokat.
     // A paraméterek:
-    // - Boat: az entitás típusa, amellyel dolgozunk
-    // - Long: az entitás azonosítójának típusa (Boat.id típusa)
+    // - Book: az entitás típusa, amellyel dolgozunk
+    // - Long: az entitás azonosítójának típusa (Book.id típusa)
 }
