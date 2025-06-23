@@ -14,17 +14,17 @@ import java.util.List;
 @RequestMapping("/api/book")
 public class BookRESTController {
     // A könyvekkel kapcsolatos üzleti logikát egy külön szolgáltatás (service) kezeli.
-    // Az @Autowired automatikusan betölti a BoatService példányt a Spring konténerből.
+    // Az @Autowired automatikusan betölti a BookService példányt a Spring konténerből.
     @Autowired
     private BookService bookService;
-    // GET /api/boats
-    // Minden hajó lekérdezése.
+    // GET /api/books
+    // Minden könyv lekérdezése.
     @GetMapping
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
-    // GET /api/boats/{id}
-    // Egy adott hajó lekérdezése azonosító alapján.
+    // GET /api/books/{id}
+    // Egy adott könyv lekérdezése azonosító alapján.
     // Ha nem található, 404 NOT FOUND válasszal tér vissza.
     @GetMapping("/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Long id) {
@@ -32,14 +32,14 @@ public class BookRESTController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
-    // POST /api/boats
-    // Új hajó létrehozása. A kérés törzsében (body) JSON formátumban küldjük a hajó adatait.
+    // POST /api/books
+    // Új könyv létrehozása. A kérés törzsében (body) JSON formátumban küldjük a könyv adatait.
     @PostMapping
     public Book createBook(@RequestBody Book book) {
         return bookService.createBook(book);
     }
-    // PUT /api/boats/{id}
-    // Egy meglévő hajó frissítése azonosító alapján.
+    // PUT /api/books/{id}
+    // Egy meglévő könyv frissítése azonosító alapján.
     // Optimista zárolás esetén 409 Conflict hibaüzenettel tér vissza.
     @PutMapping("/{id}")
     public ResponseEntity<?> updateBook(@PathVariable Long id, @RequestBody Book book) {
@@ -52,8 +52,8 @@ public class BookRESTController {
             return ResponseEntity.notFound().build();
         }
     }
-    // DELETE /api/boats/{id}
-    // Hajó törlése azonosító alapján.
+    // DELETE /api/books/{id}
+    // Könyv törlése azonosító alapján.
     // Ha sikeres → 204 No Content, ha nem található → 404 Not Found
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
