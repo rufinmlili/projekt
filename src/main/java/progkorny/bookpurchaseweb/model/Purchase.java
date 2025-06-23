@@ -15,7 +15,7 @@ public class Purchase {
     @Id
     private long id;
 
-    // Több RentalEvent is hivatkozhat egy hajóra (ManyToOne kapcsolat)
+    // Több RentalEvent is hivatkozhat egy könyvre (ManyToOne kapcsolat)
     @ManyToOne
     @JoinColumn(name = "book_purchase_id") // Az adatbázisban ez a mező tárolja a hivatkozott hajó ID-ját
     private Book bookPurchase;
