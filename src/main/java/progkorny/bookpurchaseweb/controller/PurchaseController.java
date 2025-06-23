@@ -13,11 +13,11 @@ import java.util.List;
 @RestController()
 @RequestMapping("api/purchase")
 public class PurchaseController {
-    // A rentalEventService osztály példányát a Spring injektálja be automatikusan.
+    // A purchaseService osztály példányát a Spring injektálja be automatikusan.
     // Ez az osztály végzi a háttérben a vásárlási események adatainak elérését és feldolgozását.
     @Autowired
     private PurchaseService purchaseService;
-    // GET /api/rentalevents
+    // GET /api/purchase
     // Visszaadja az összes vásárlási eseményt egy listában.
     @GetMapping()
     public List<Purchase> getAllPurchase()
